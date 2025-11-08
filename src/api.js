@@ -1,8 +1,8 @@
 import axios from "axios";
-/*
 
-const USER_API_URL = "http://localhost:9096/api/users";
-const QUIZ_API_URL = "http://localhost:9096/api/quizzes";
+// Read from environment variables
+const USER_API_URL = process.env.REACT_APP_API_URL + "/api/users";
+const QUIZ_API_URL = process.env.REACT_APP_API_URL + "/api/quizzes";
 
 /* ---------------- USER APIs ---------------- */
 
@@ -55,7 +55,7 @@ export async function getQuizById(id) {
   return res.data;
 }
 
-// ✅ Get quizzes by domain
+// Get quizzes by domain
 export async function getQuizzesByDomain(domain) {
   const res = await axios.get(`${QUIZ_API_URL}/domain/${domain}`);
   return res.data;
